@@ -1,0 +1,22 @@
+material Vineyard/LeavesText
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture leaves.jpg
+        // Prueba con valores más grandes para compactar la imagen (ej. 3.0 o 5.0)
+        // El primer número escala el ancho (X) y el segundo el alto (Y)
+        scale 1.0 4.0
+      }
+      texture_unit
+      {
+        texture leaves_normal.jpg
+        scale 2.0 1.0
+        colour_op modulate
+      }
+    }
+  }
+}

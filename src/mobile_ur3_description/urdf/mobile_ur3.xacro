@@ -1,0 +1,133 @@
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="mobile_ur3">
+
+  <xacro:include filename="$(find mobile_ur3_description)/urdf/mobile_platform.xacro"/>
+
+  <!-- <xacro:include filename="$(find mobile_ur3_description)/urdf/mobile_platform_ros2_control.xacro"/> -->
+
+  <xacro:include filename="$(find mobile_ur3_description)/urdf/mobile_platform_ros2_control.xacro"/>
+
+  <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+
+  <xacro:mobile_platform/>
+
+  <xacro:mobile_platform_ros2_control/>
+
+
+  <xacro:ur_robot
+      name="ur3"
+
+      tf_prefix=""
+
+      parent="mobile_base_link"
+
+      joint_limits_parameters_file="$(find ur_description)/config/ur3/joint_limits.yaml"
+
+      kinematics_parameters_file="$(find ur_description)/config/ur3/default_kinematics.yaml"
+
+      physical_parameters_file="$(find ur_description)/config/ur3/physical_parameters.yaml"
+
+      visual_parameters_file="$(find ur_description)/config/ur3/visual_parameters.yaml"
+
+      sim_gazebo="true">
+
+      <origin xyz="0 0.2 0.435" rpy="0 0 0"/>
+
+  </xacro:ur_robot>
+
+  <gazebo>
+  <plugin
+      filename="libgazebo_ros2_control.so"
+      name="gazebo_ros2_control">
+
+    <parameters>
+      $(find mobile_ur3_description)/config/mobile_ur3_controllers.yaml
+    </parameters>
+
+  </plugin>
+</gazebo>
+
+<gazebo reference="lidar_link">
+
+  <sensor name="lidar" type="ray">
+
+    <always_on>true</always_on>
+
+    <update_rate>15</update_rate>
+
+    <visualize>true</visualize>
+
+    <pose>0 0 0 0 0 0</pose>
+
+    <ray>
+
+      <scan>
+
+        <horizontal>
+
+          <samples>720</samples>
+
+          <resolution>1</resolution>
+
+          <min_angle>1.08</min_angle>
+
+          <max_angle>2</max_angle>
+
+        </horizontal>
+
+      </scan>
+
+      <range>
+
+        <min>0.10</min>
+
+        <max>2.0</max>
+
+        <resolution>0.01</resolution>
+
+      </range>
+
+    </ray>
+
+    <plugin
+        name="gazebo_ros_laser"
+        filename="libgazebo_ros_ray_sensor.so">
+
+      <ros>
+
+        <remapping>~/out:=scan</remapping>
+
+      </ros>
+
+      <output_type>sensor_msgs/LaserScan</output_type>
+
+      <frame_name>lidar_link</frame_name>
+
+    </plugin>
+
+  </sensor>
+</gazebo>
+
+<gazebo reference="imu_link">
+
+  <sensor name="imu_sensor" type="imu">
+
+    <always_on>true</always_on>
+    <update_rate>100</update_rate>
+
+    <plugin
+        filename="libgazebo_ros_imu_sensor.so"
+        name="gazebo_ros_imu">
+
+      <ros>
+        <remapping>~/out:=imu/data</remapping>
+      </ros>
+
+      <frame_name>imu_link</frame_name>
+
+    </plugin>
+
+  </sensor>
+
+</gazebo>
+
+</robot>

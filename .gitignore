@@ -1,0 +1,35 @@
+# ROS 2
+build/
+install/
+log/
+
+# Colcon
+.colcon/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# IDE
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# ROS logs
+*.log
+
+# Official Universal Robots repositories
+src/Universal_Robots_Client_Library/
+src/Universal_Robots_ROS2_Description/
+src/Universal_Robots_ROS2_Driver/
+src/Universal_Robots_ROS2_Gazebo_Simulation/

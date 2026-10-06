@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+
+<model name="vineyard_row">
+
+  <static>true</static>
+
+  <!-- ========================= -->
+  <!-- TRONCO -->
+  <!-- ========================= -->
+
+  <link name="trunk">
+
+    <pose>0 0 0.5 0 0 0</pose>
+
+    <collision name="collision">
+      <geometry>
+        <cylinder>
+          <radius>0.03</radius>
+          <length>0.90</length>
+        </cylinder>
+      </geometry>
+    </collision>
+
+    <visual name="visual">
+      <geometry>
+        <cylinder>
+          <radius>0.03</radius>
+          <length>1.50</length>
+        </cylinder>
+      </geometry>
+
+      <material>
+        <ambient>0.38 0.22 0.10 1</ambient>
+        <diffuse>0.38 0.22 0.10 1</diffuse>
+      </material>
+
+    </visual>
+
+  </link>
+
+  <!-- ========================= -->
+  <!-- BRAZO IZQUIERDO -->
+  <!-- ========================= -->
+
+  <link name="branch_left">
+
+    <pose>-0.18 0 0.95 0 1.5708 0</pose>
+
+    <visual name="visual">
+
+      <geometry>
+        <cylinder>
+          <radius>0.015</radius>
+          <length>0.36</length>
+        </cylinder>
+
+      </geometry>
+
+      <material>
+        <ambient>0.40 0.23 0.12 1</ambient>
+        <diffuse>0.40 0.23 0.12 1</diffuse>
+      </material>
+
+    </visual>
+
+    <collision name="collision">
+
+      <geometry>
+
+        <cylinder>
+          <radius>0.015</radius>
+          <length>0.36</length>
+        </cylinder>
+
+      </geometry>
+
+    </collision>
+
+  </link>
+
+  <!-- ========================= -->
+  <!-- BRAZO DERECHO -->
+  <!-- ========================= -->
+
+  <link name="branch_right">
+
+    <pose>0.18 0 0.95 0 1.5708 0</pose>
+
+    <visual name="visual">
+
+      <geometry>
+
+        <cylinder>
+          <radius>0.015</radius>
+          <length>0.36</length>
+
+        </cylinder>
+
+      </geometry>
+
+      <material>
+        <ambient>0.40 0.23 0.12 1</ambient>
+        <diffuse>0.40 0.23 0.12 1</diffuse>
+      </material>
+
+    </visual>
+
+    <collision name="collision">
+
+      <geometry>
+
+        <cylinder>
+          <radius>0.015</radius>
+          <length>0.36</length>
+
+        </cylinder>
+
+      </geometry>
+
+    </collision>
+
+  </link>
+
+  <!-- ========================= -->
+  <!-- POSTE IZQUIERDO -->
+  <!-- ========================= -->
+
+  <link name="post_left">
+
+    <pose>-0.80 0 0.75 0 0 0</pose>
+
+    <visual name="visual">
+
+      <geometry>
+
+        <cylinder>
+          <radius>0.04</radius>
+          <length>2.0</length>
+
+        </cylinder>
+
+      </geometry>
+
+      <material>
+
+        <ambient>0.55 0.55 0.55 1</ambient>
+        <diffuse>0.55 0.55 0.55 1</diffuse>
+
+      </material>
+
+    </visual>
+
+    <collision name="collision">
+
+      <geometry>
+
+        <cylinder>
+          <radius>0.04</radius>
+          <length>2.0</length>
+
+        </cylinder>
+
+      </geometry>
+
+    </collision>
+
+  </link>
+
+  <!-- ========================= -->
+  <!-- POSTE DERECHO -->
+  <!-- ========================= -->
+
+  <link name="post_right">
+
+    <pose>0.80 0 0.75 0 0 0</pose>
+
+    <visual name="visual">
+
+      <geometry>
+
+        <cylinder>
+          <radius>0.04</radius>
+          <length>2.0</length>
+
+        </cylinder>
+
+      </geometry>
+
+      <material>
+
+        <ambient>0.55 0.55 0.55 1</ambient>
+        <diffuse>0.55 0.55 0.55 1</diffuse>
+
+      </material>
+
+    </visual>
+
+    <collision name="collision">
+
+      <geometry>
+
+        <cylinder>
+          <radius>0.04</radius>
+          <length>2.0</length>
+
+        </cylinder>
+
+      </geometry>
+
+    </collision>
+
+  </link>
+
+  <!-- ========================= -->
+  <!-- ALAMBRE INFERIOR -->
+  <!-- ========================= -->
+
+  <link name="wire_lower">
+
+    <pose>0 0 0.95 0 1.5708 0</pose>
+
+    <visual name="visual">
+
+      <geometry>
+
+        <cylinder>
+          <radius>0.005</radius>
+          <length>1.60</length>
+
+        </cylinder>
+
+      </geometry>
+
+      <material>
+
+        <ambient>0.75 0.75 0.75 1</ambient>
+        <diffuse>0.75 0.75 0.75 1</diffuse>
+
+      </material>
+
+    </visual>
+
+  </link>
+
+  <!-- ========================= -->
+  <!-- ALAMBRE SUPERIOR -->
+  <!-- ========================= -->
+
+  <link name="wire_upper">
+
+    <pose>0 0 1.30 0 1.5708 0</pose>
+
+    <visual name="visual">
+
+      <geometry>
+
+        <cylinder>
+          <radius>0.005</radius>
+          <length>1.60</length>
+
+        </cylinder>
+
+      </geometry>
+
+      <material>
+
+        <ambient>0.75 0.75 0.75 1</ambient>
+        <diffuse>0.75 0.75 0.75 1</diffuse>
+
+      </material>
+
+    </visual>
+
+  </link>
+
+  <!-- ========================= -->
+  <!-- HOJAS -->
+  <!-- ========================= -->
+
+  <link name="leaves">
+
+  <pose>0 0 1.10 0 0 0</pose>
+    <!-- TONO 2: Franja Central (Verde Claro + Reflejo) -->
+    <visual name="visual_stripe_2">
+      <pose>0 0 0 0 0 0</pose>
+      <geometry>
+        <box>
+          <size>0.2 0.30 0.55</size>
+        </box>
+      </geometry>
+      <material>
+        <ambient>0.0 0.6 0.0 1</ambient>
+        <diffuse>0.0 0.8 0.0 1</diffuse>
+        <!-- Genera un brillo reflejado al incidir la luz del entorno -->
+        <specular>0.5 0.5 0.5 1</specular>
+        <shininess>20</shininess>
+      </material>
+    </visual>
+
+    <!-- COLISIÓN ÚNICA: Vital para el cálculo métrico de la cámara de profundidad
+    <collision name="collision">
+      <geometry>
+        <box>
+          <size>0.15 0.30 0.55</size>
+        </box>
+      </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x00</collide_bitmask>
+        </contact>
+      </surface>
+    </collision> -->
+
+
+
+</link>
+
+</model>
+
+</sdf>

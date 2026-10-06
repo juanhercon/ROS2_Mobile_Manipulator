@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+<world name="vineyard">
+
+    <plugin name="gazebo_ros_init" filename="libgazebo_ros_init.so"/>
+    <plugin name="gazebo_ros_factory" filename="libgazebo_ros_factory.so"/>
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so"/>
+
+    <include>
+        <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+        <uri>model://sun</uri>
+    </include>
+    
+    <!-- Planta 1 -->
+    <include>
+        <name>vineyard_row_1</name>
+        <uri>model://vineyard_row</uri>
+        <pose>2 0.8 0 0 0 0</pose>
+    </include>
+
+    <!-- Planta 2 -->
+    <include>
+        <name>vineyard_row_2</name>
+        <uri>model://vineyard_row</uri>
+        <pose>3.6 0.8 0 0 0 0</pose>
+    </include>
+
+    <!-- Planta 3 -->
+    <include>
+        <name>vineyard_row_3</name>
+        <uri>model://vineyard_row</uri>
+        <pose>5.2 0.8 0 0 0 0</pose>
+    </include>
+
+    <!-- Planta 4 -->
+    <include>
+        <name>vineyard_row_4</name>
+        <uri>model://vineyard_row</uri>
+        <pose>6.8 0.8 0 0 0 0</pose>
+    </include>
+
+    <!-- Racimo de uva -->
+    <include>
+        <name>grape_1</name>
+        <uri>model://grape_cluster</uri>
+        <pose>1.9 0.65 1 0 0 0</pose>
+    </include>
+
+    <include>
+        <name>grape_2</name>
+        <uri>model://grape_cluster</uri>
+        <pose>2.1 0.67 0.95 0 0 0</pose>
+    </include>
+
+    <include>
+        <name>grape_3</name>
+        <uri>model://grape_cluster</uri>
+        <pose>3.5 0.65 1 0 0 0</pose>
+    </include>
+
+    <include>
+        <name>grape_4</name>
+        <uri>model://grape_cluster</uri>
+        <pose>3.7 0.67 0.95 0 0 0</pose>
+    </include>
+
+    <include>
+        <name>grape_5</name>
+        <uri>model://grape_cluster</uri>
+        <pose>5.1 0.65 1 0 0 0</pose>
+    </include>
+
+    <include>
+        <name>grape_6</name>
+        <uri>model://grape_cluster</uri>
+        <pose>5.3 0.67 0.95 0 0 0</pose>
+    </include>
+
+    <include>
+        <name>grape_7</name>
+        <uri>model://grape_cluster</uri>
+        <pose>6.7 0.65 1 0 0 0</pose>
+    </include>
+
+    <include>
+        <name>grape_8</name>
+        <uri>model://grape_cluster</uri>
+        <pose>6.9 0.67 0.95 0 0 0</pose>
+    </include>
+    
+</world>
+</sdf>

@@ -1,0 +1,6 @@
+int8 command
+
+---
+
+bool success
+string message

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<sdf version="1.7">
+
+  <model name="grape_cluster">
+
+    <static>false</static>
+
+    
+    <link name="cluster">
+
+      <gravity>false</gravity>
+
+      <pose>0 0 0 0 0 0</pose>
+
+      <collision name="collision">
+
+        <geometry>
+          <sphere>
+            <radius>0.03</radius>
+          </sphere>
+        </geometry>
+        <!-- AÑADE ESTA SECCIÓN IGUAL QUE EN LAS HOJAS -->
+        <surface>
+          <contact>
+            <collide_bitmask>0x00</collide_bitmask>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+
+        <geometry>
+          <sphere>
+            <radius>0.03</radius>
+          </sphere>
+        </geometry>
+
+        <material>
+        
+          <ambient>0.45 0.0 0.55 1</ambient>
+          <diffuse>0.45 0.0 0.55 1</diffuse>
+          <!-- Agrega estas dos líneas para crear un punto de brillo blanco artificial -->
+          <specular>0.4 0.4 0.4 1</specular>
+          <shininess>10</shininess>
+        </material>
+
+      </visual>
+
+      <inertial>
+        <mass>0.03</mass>
+        <inertia>
+          <ixx>0.000016</ixx>
+          <iyy>0.000016</iyy>
+          <izz>0.000016</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+
+    </link>
+
+  </model>
+
+</sdf>
